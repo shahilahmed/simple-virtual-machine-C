@@ -17,7 +17,7 @@ DEFINATION PART
 
 ***************/
 #define NAME    "Simple Virtual Machine"
-#define VERSION "v3.5.0"
+#define VERSION "v3.5.5"
 #define AUTHOR  "Md Shahil Ahmed"
 
 #define FALSE   0

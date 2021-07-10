@@ -8,11 +8,15 @@ def puts 1
 		store local 0
 	puts_label_0:	
 		rload local 0
-	    const 0
-		if ne puts_label_1
+		const 0
+		ne 
+		brf puts_label_1
 		rload local 0
 		printchar
-		inc local 0
+		load  local 0
+		const 1
+		add
+		store local 0
 		br puts_label_0
 	puts_label_1:	
 		ret
@@ -27,7 +31,8 @@ def fizzbuzz 1
 	fizzbuzz_label_0:	
 		load local 0
 		load local 1
-		if le fizzbuzz_label_4
+		le 
+		brf fizzbuzz_label_4
 		const 0
 		store local 2		
 		load local  0
@@ -39,7 +44,8 @@ def fizzbuzz 1
 		store local 2
 		const 500
 		call puts
-		printspace
+		const 32
+		printchar
 	fizzbuzz_label_1:
 		load local 0
 		const 5
@@ -50,7 +56,8 @@ def fizzbuzz 1
 		store local 2
 		const 512
 		call puts
-		printspace
+		const 32
+		printchar
 	fizzbuzz_label_2:
 		load local 2
 		const 1
@@ -59,15 +66,21 @@ def fizzbuzz 1
 		load local 0
 		print
 	fizzbuzz_label_3:	
-		println
-		inc local 0
+		const 10
+		printchar
+		load  local 0
+		const 1
+		add
+		store local 0
 		br fizzbuzz_label_0
 	fizzbuzz_label_4:	
-		println	
+		const 10
+		printchar
 		ret	
 def main 0
-	 call init_data
-	 const 100
-	 call fizzbuzz
-	 println
-	 halt
+	call init_data
+	const 15
+	call fizzbuzz
+	const 10
+	printchar
+	halt

@@ -1,7 +1,8 @@
 def fact 1
 		load argument 0
 		const 1
-		if le fact_label_0
+		le 
+		brf fact_label_0
 		const 1
 		ret
 	fact_label_0:	
@@ -26,5 +27,6 @@ def main 0
 	store global  2
 	load  global  2
 	print
-	println
+	const 10
+	printchar
 	halt

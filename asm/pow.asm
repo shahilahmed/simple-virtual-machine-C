@@ -1,7 +1,8 @@
 def pow 2
 		load argument 0
 		const 0
-		if le pow_label_0
+		le 
+		brf pow_label_0
 		const 1
 		ret
 	pow_label_0:	
@@ -24,7 +25,8 @@ def main 0
 	main_label_0:    
 		load  local 0
 		load  local 1
-		if le main_label_1
+		le 
+		brf main_label_1
 		load local 0
 		const 5
 		call pow
@@ -35,13 +37,20 @@ def main 0
 		store local 2
 		load  local 3
 		print
-		printspace
-		inc local 0
+		const 32
+		printchar
+		load  local 0
+		const 1
+		add
+		store local 0
 		br main_label_0
 	main_label_1:
-		println
-		println
+		const 10
+		printchar
+		const 10
+		printchar
 		load local 2
 		print	     
-		println
+		const 10
+		printchar
 		halt

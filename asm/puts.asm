@@ -8,11 +8,15 @@ def puts 1
 		store local 0
 	puts_label_0:	
 		rload local 0
-	    const 0
-		if ne puts_label_1
+		const 0
+		ne 
+		brf puts_label_1
 		rload local 0
 		printchar
-		inc local 0
+		load  local 0
+		const 1
+		add
+		store local 0
 		br puts_label_0
 	puts_label_1:	
 		ret
@@ -22,7 +26,8 @@ def main 0
 	 call puts
 	 const 32
 	 printchar
-	 const 512
+	 const 500
 	 call puts
-	 println
+	 const 10
+	 printchar
 	 halt
